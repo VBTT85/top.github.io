@@ -1,0 +1,1480 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Prevents width overflow issues */
+    font-family: "Poppins", sans-serif;
+}
+
+/* Prevent horizontal scrolling */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Font weight styles */
+.poppins-light { font-weight: 300; }
+.poppins-regular { font-weight: 400; }
+.poppins-semibold { font-weight: 600; }
+.poppins-bold { font-weight: 700; }
+
+/* Contact info styles */
+
+.contact-info {
+    background-color: #5271FF;
+    color: white;
+    padding: 10px 155px 10px 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    box-sizing: border-box;
+}
+
+.contact-left {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    margin-left: 640px;
+    opacity: 0.3s ease;
+}
+
+.contact-left p {
+    margin: 0;
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: moveRight 4s linear infinite;
+    display: inline-block;
+}
+
+/* Keyframes animation */
+@keyframes moveRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.scroll-wrapper {
+    overflow: hidden;
+    width: 230px; /* Or whatever width makes sense for your layout */
+}
+
+.contact-left.hidden {
+        opacity: 0;
+    visibility: hidden;
+}
+
+.contact-right {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    font-size: 13px;
+}
+
+.contact-right span {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+
+/* HEADER SECTION */
+.header { 
+    min-height: 100vh;
+    width: 100vw; /* Ensure full viewport width */
+    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,0.4)), url(Images/fabio-oyXis2kALVg-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION BAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5% 6%;
+    background-color: white;
+    z-index: 1000;
+    position: fixed; /* Make it fixed to top */
+    width: 100%;
+    top: 40px; /* Offset for contact info bar */
+    transition: all 0.3s ease-in-out;
+    height: 150px;
+    border-bottom: 1px solid lightblue;
+}
+
+/* Shrinking behavior when scrolling */
+nav.shrink {
+    height: 80px;
+    padding: 0.5% 4%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav img {
+    height: 100%;
+    max-height: 120px;
+    transition: all 0.3s ease;
+    object-fit: contain;
+}
+
+
+
+/* Shrink logo */
+nav.shrink img {
+    max-height: 60px;
+}
+
+    
+/* Navigation links */
+.nav-links {
+    margin-right: 40px;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links ul li {
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    display: block; /* Ensure full area is clickable */
+    color: #004AAD;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a.contact-btn {
+    background-color: #38B6FF;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.nav-links a.contact-btn:hover {
+    background-color: darkblue; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom-in effect */ 
+    color: white;
+}
+
+/* Hover effect for links */
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #38B6FF;
+    display: block;
+    margin: auto;
+    transition: width 0.5s ease-in-out;
+}
+
+.nav-links ul li:hover a {
+    color: #38B6FF; /* Change color on hover */
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+/* TEXT BOX */
+.text-box {
+    width: 90%;
+    max-width: 800px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.text-box h1 {
+    font-size: 48px;
+    font-weight: 600;
+    color: #38B6FF;
+    padding-top: 200px;
+    padding-bottom: 50px;
+}
+
+.text-box h2 {
+    color: white;
+    background: rgba(0, 0, 0, 0.1); /* Slight background for readability */
+    padding: 50px;
+    border-radius: 5px;
+}
+
+.about-us {
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    margin: 50px;
+    padding: 10px;
+    box-shadow: 0 0 20px lightblue;
+}
+.about-container {
+    display: flex;
+    gap: 2rem;
+    margin: 50px;
+    align-items: center; /* ✅ This vertically aligns the children */
+
+
+  }
+
+  /* Initial state for animation */
+.text-box h1,
+.text-box h2,
+.hero-btn1,
+.hero-btn2 {
+    opacity: 0;
+}
+
+/* Animation triggers */
+.text-box h1.animate-in {
+    animation: fadeSlideDown 1s ease forwards;
+}
+
+.text-box h2.animate-in {
+    animation: fadeSlideUp 1s ease 0.5s forwards;
+}
+
+.hero-btn1.animate-in {
+    animation: slideInLeft 1s ease 1s forwards;
+}
+
+.hero-btn2.animate-in {
+    animation: slideInRight 1s ease 1.2s forwards;
+}
+
+/* Keyframes */
+@keyframes fadeSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+  
+  .corporate-profile-text,
+  .corporate-profile-image {
+    flex: 1; /* equal width columns */
+    text-align: justify;
+  }
+  .corporate-profile-text h1{
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  .corporate-profile-text p{
+    padding-right: 50px;
+
+  }
+    .hero-btn{
+    display: inline-block;
+    background-color: #004AAD;
+    color: white;
+    padding: 12px 34px;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    font-weight: 400;
+    margin-right: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    margin-top: auto;
+  }
+  .hero-btn i {
+    margin-right: 8px;
+  }
+.hero-btn1 {
+    display: inline-block;
+    background-color: #004AAD;
+    color: white;
+    padding: 12px 34px;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 8px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+
+    }
+
+    .hero-btn2 {
+    display: inline-block;
+    background-color: #38B6FF;
+    color: white;
+    padding: 12px 34px;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 8px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+    }
+  /* Optional: make image responsive */
+  .corporate-profile-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /*script for reveal*/
+
+          /* Additional CSS for scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+  /*---services-----*/
+  
+/*---services-----*/
+.our-services{
+    text-align: center;
+}
+
+.our-services-container {
+    display: flex;
+    gap: 2rem;
+    margin: 50px;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  
+.our-services-col {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+    text-align: justify;
+    border: 1px solid lightblue;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 20px lightblue;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.our-services-col p{
+  text-align: left;
+}
+
+.our-services-col h1{
+  text-align: left;
+}
+.our-services-col:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px deepskyblue;
+    cursor: pointer;
+}
+  .our-services-col img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px; /* Optional: match column rounding */
+    display: block;      /* Removes unwanted space under image */
+  }
+
+  .why-choose-us h1{
+    text-align: center;
+
+    
+  }
+  
+  .why-choose-us p{
+    text-align: center;
+    margin: 10px;
+  }
+  .why-choose-us-container{
+    display: flex;
+    gap: 1rem;
+    margin: 50px;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+
+.why-choose-us-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 100px;
+  text-align: justify;
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  padding: 10px 50px 10px 50px;
+  box-shadow: 0 0 20px lightblue;
+  background-color: white;
+  color: black;
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease; /* smooth sliding */
+}
+
+
+   .why-choose-us-col p{
+    padding-bottom: 30px;
+  }
+  .why-choose-us-col h2{
+    text-align: center;
+  }
+
+.why-choose-us-col:hover {
+  background-color: #004AAD; /* dark blue */
+  color: white;
+  transform: translateY(-10px); /* slide up by 10px */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+}
+
+.why-choose-us-col:hover .icon {
+  filter: brightness(0) invert(1); /* turns icon white */
+}
+
+
+
+.why-choose-us-col .icon {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  padding-top: 15px;
+  filter: brightness(1);
+  transition: filter 0.3s ease;
+}
+
+
+  .get-in-touch {
+
+
+    margin: 50px;
+    padding-top: 10px;
+
+  }
+
+  .get-in-touch h5{
+    border: 1px solid lightblue;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    width: fit-content;
+    margin: 0 auto; /* This centers the element horizontally */
+  }
+
+  .get-in-touch h1{
+    text-align: center;
+    margin: 20px 50px;
+  }
+
+  .get-in-touch p{
+    text-align: center;
+    margin: 20px 50px;
+  }
+
+  .footer {
+    text-align: center;
+    border-top: 5px solid #004AAD;
+    margin: 50px;
+    padding-top: 30px;
+  }
+
+      .icons .fa{
+      color: #1a43bf;
+      margin: 0 13px;
+      cursor: pointer;
+      padding: 18;
+    }
+
+.get-in-touch .hero-btn {
+  margin: 20px auto;
+  transform: none;
+  display: block;
+  width: fit-content;
+}
+
+
+ /* SERVICES PAGE */
+  /* HEADER SECTION */
+/* Replace your current .header-services with this */
+.header-services {
+  min-height: 60vh;
+  height: auto;
+  background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,0.4)), url(Images/Gemini_Generated_Image_Services.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* <-- Fixes iOS grey issues */
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  
+}
+
+
+/* Services page specific text box */
+.header-services .services-text-box {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+}
+
+.header-services .services-text-box h1 {
+  font-size: 2.5rem;
+  opacity: 1 !important; /* Forces visibility */
+  margin: 0 auto;
+}
+
+.header-services .services-text-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+/* Shared grow-and-turn base */
+.fade-left,
+.fade-right {
+    opacity: 0;
+    transform: scale(0.8) rotate(-10deg);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Final visible state */
+.fade-left.visible,
+.fade-right.visible {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+
+/* Keep all your existing nav styles as they are */
+/* The text-box styles will automatically apply */
+/* Services container */
+.services-container {
+  display: flex;
+  flex-direction: row;
+align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 100px;
+  gap: 0;
+  background-color: #DFF6FF;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.services-container .reverse {
+  flex-direction: row-reverse;
+}
+
+.services-text, .services-image {
+
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.services-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ✅ Vertically center text */
+  padding: 10px 50px;
+  text-align: justify;
+  height: 100%;
+}
+
+
+.services-text h1 {
+  text-align: center;
+  margin-bottom: 5px;
+
+  }
+.services-text p {
+margin-bottom: 5px;
+}
+
+.services-text ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.services-text li {
+  margin-bottom: 4px;
+}
+
+.services-image {
+  padding: 0; /* No extra spacing around image */
+  display: block; /* Remove flex behavior */
+}
+
+
+.services-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/*ABOUT US PAGE*/
+
+ /* HEADER SECTION */
+/* Replace your current .header-services with this */
+
+.header-about{
+  height: 60vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,0.4)), url(Images/Gemini_Generated_Image_Cropped.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Remove if you don't want fixed positioning */
+}
+
+/* About page specific text box */
+.header-about .about-text-box {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+}
+
+.header-about .about-text-box h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  opacity: 1 !important; /* Forces visibility */
+  margin: 0 auto;
+}
+
+.header-about .about-text-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+
+.about-section {
+    width: 90%;
+    margin: auto;
+    padding: 50px 0;
+}
+
+.about-section-col {
+    display: flex;
+    flex-direction: row;     /* Force horizontal layout */
+    flex-wrap: nowrap;       /* Prevent wrapping */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+        border: 1px solid lightblue;
+            border-radius: 10px;
+            
+}
+
+.about-section-text,
+.about-section-image {
+    width: 50%;              /* Explicitly set width */
+    box-sizing: border-box;
+}
+
+.about-section-text {
+    padding: 20px;
+}
+
+.about-section-text h1 {
+    font-size: 28px;
+    color: black;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.about-section-text p {
+    font-size: 16px;
+    text-align: justify;
+    color: black;
+}
+
+.about-section-image img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.section-divider {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, #004AAD, #5271FF, #38B6FF); /* matches your brand colors */
+    margin: 40px auto;
+    border-radius: 1px;
+}
+   
+
+.vision-mission h1{
+  text-align: center;
+  }
+  
+.vision-mission-container {
+  display: flex;
+  gap: 2rem;
+  margin: 50px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.vision-col {
+  position: relative;
+  background: white; /* Inner background */
+  padding: 10px;
+  border-radius: 10px;
+
+  /* Create the gradient border effect */
+  border: 3px solid transparent;
+  background-image:
+    linear-gradient(white, white),  /* Inner background */
+    linear-gradient(to right, #004AAD, #5271FF, #38B6FF); /* Border */
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  color: black;
+  text-align: justify;
+  flex: 1;
+  min-width: 200px;
+}
+
+
+.vision-col h2{
+  text-align: center;
+}
+
+/* Only apply inside the Values box */
+.values-accordion .accordion-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.values-accordion .accordion-item {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.values-accordion .accordion-toggle {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 0;
+  color: #004AAD;
+}
+
+.values-accordion .accordion-toggle:hover {
+  text-decoration: underline;
+}
+
+.values-accordion .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  padding-left: 10px;
+}
+
+.values-accordion .accordion-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #234569;
+}
+
+/* Only expand content inside active .values-accordion */
+.values-accordion .accordion-item.active .accordion-content {
+  max-height: 200px;
+  opacity: 1;
+  padding-top: 5px;
+}
+
+/* Icon default style */
+.values-accordion .accordion-toggle .icon {
+  float: right;
+  transition: transform 0.3s ease;
+  font-size: 18px;
+  color: #004AAD;
+}
+
+/* Rotate icon when active */
+.values-accordion .accordion-item.active .icon {
+  transform: rotate(45deg); /* "+" becomes "×" or like a rotated plus */
+}
+
+
+/*Contact Us Page*/
+
+
+.header-contact{
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,0.4)), url(Images/Gemini_Generated_Image_Contact.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Remove if you don't want fixed positioning */
+}
+
+/* About page specific text box */
+.header-contact .contact-text-box {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+}
+
+.header-contact .contact-text-box h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  opacity: 1 !important; /* Forces visibility */
+  margin: 0 auto;
+}
+
+.header-contact .contact-text-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+
+
+.contact-us {
+  width: 80%;
+  margin: auto;
+}
+
+.contact-us .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-us .contact-col {
+  flex: 1;
+  min-width: 250px; /* Adjust this value as needed */
+  margin: 20px 10px; /* Adjust spacing as needed */
+}
+
+.contact-us .contact-col div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Adjust spacing between items */
+}
+
+.contact-us .contact-col div i {
+  font-size: 24px; /* Adjust icon size as needed */
+  margin-right: 15px; /* Space between icon and text */
+}
+
+.contact-us .contact-col div span h3 {
+  margin: 0;
+  font-size: 18px; /* Adjust font size as needed */
+}
+
+.contact-us .contact-col div span p {
+  margin: 5px 0 0;
+  font-size: 14px; /* Adjust font size as needed */
+  color: #555; /* Adjust text color as needed */
+}
+
+
+.contact-col {
+flex-basis: 48%;
+margin-bottom: 30px;
+}
+
+.contact-col div{
+display: flex;
+align-items: center;
+margin-bottom: 40px;
+}
+
+.contact-col div .fa {
+font-size: 28px;
+color:#004AAD;
+margin: 10px;
+margin-right: 30px;
+
+}
+
+.contact-col div p{
+  padding: 0;
+}
+  .contact-col div p{
+    font-size:20px;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 400;
+  }
+
+  .contact-col input, .contact-col textarea{
+width: 100%;
+padding: 15px;
+margin-bottom: 17px;
+outline: none;
+border: solid #004AAD;
+  }
+
+ .contact-col .submit-btn{
+      background-color: #004AAD;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+/* ===== Hamburger Menu Styles ===== */
+.nav-toggle {
+  display: none; /* Hidden by default */
+}
+
+/* ===== Responsive Styles for Mobile Devices (Max 768px) ===== */
+
+/* ===== Additional Mobile Spacing Fixes ===== */
+@media (max-width: 768px) {
+  
+  /* Ensure body starts at top with no gaps */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Remove any container margins that might create space at top */
+  .header-container,
+  .main-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Contact Info - hidden on mobile */
+  .contact-info {
+    display: none !important;
+    position: static !important; /* override fixed position */
+  }
+
+  /* Navigation */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    position: sticky; /* ✅ Changed to sticky to stay at top */
+    top: 0; /* ✅ Stick to top of viewport */
+    height: auto;
+    min-height: 60px; /* ✅ Set minimum height for consistent spacing */
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    z-index: 1000; /* ✅ Added high z-index to ensure nav stays on top */
+    margin: 0; /* ✅ Remove any margins */
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px 0;
+    border-top: 1px solid lightgray;
+    position: relative; /* ✅ Added positioning context */
+    z-index: 1001; /* ✅ Higher z-index for nav links */
+  }
+
+  .nav-links.show {
+    display: flex !important;
+  }
+
+  .nav-links ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: white; /* ✅ Ensure background is solid */
+  }
+
+  .nav-links ul li a {
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #004AAD;
+    margin-left: auto;
+    z-index: 1002; /* ✅ Ensure hamburger button stays clickable */
+    position: relative;
+  }
+
+  /* Header text */
+  .text-box {
+    width: 95%;
+    padding-top: 300px; /* ✅ Increased to push content below sticky nav */
+    position: relative;
+    z-index: 1; /* ✅ Lower z-index so it stays behind navigation */
+    margin-top: 0;
+  }
+
+  .text-box h1 {
+    font-size: 28px;
+    padding-top: 20px;
+    margin-top: 0;
+  }
+
+  .text-box h2 {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .hero-btn1, .hero-btn2 {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  /* About Us */
+  .about-container {
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  /* Our Services */
+  .our-services-container {
+    flex-direction: column;
+    margin: 20px;
+  }
+  .our-services-col {
+    width: 100%;
+  }
+
+  /* Why Choose Us */
+  .why-choose-us-container {
+    flex-direction: column;
+    margin: 20px;
+  }
+  .why-choose-us-col {
+    padding: 20px;
+  }
+
+  /* Get in Touch */
+  .get-in-touch {
+    margin: 20px;
+  }
+  .get-in-touch h1,
+  .get-in-touch p {
+    margin: 10px;
+  }
+  .get-in-touch .hero-btn {
+    margin: 20px auto;
+    transform: none;
+    display: block;
+    width: fit-content;
+  }
+
+  /* Footer */
+  .footer {
+    margin: 20px;
+    padding-top: 20px;
+  }
+
+  /* Corporate Profile */
+  .corporate-profile-text p {
+    padding-right: 0;
+  }
+}
+
+/* ===== Hamburger Menu Styles ===== */
+
+nav img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* About Page */
+
+@media (max-width: 768px) {
+
+
+    .header-about {
+    height: auto !important;             /* Allows it to grow as needed */
+    min-height: 60vh;                    /* Ensures it's tall enough initially */
+    padding-bottom: 60px;                /* Adds spacing so background covers all content */
+    background-size: auto !important;   /* Ensures full coverage */
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important; /* Fixes issues on mobile (especially iOS) */
+    
+  } 
+
+  .about-text-box {
+    position: static !important;        /* Remove absolute positioning on mobile */
+    transform: none !important;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+
+  }
+
+
+.header-about .about-text-box h1 {
+  font-size: 28px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.header-about .about-text-box p {
+  font-size: 16px;
+  padding: 10px;
+  line-height: 1.5;
+}
+
+
+  .about-section-col {
+    flex-direction: column;
+    padding: 0;
+    gap: 20px;
+    border: none;
+  }
+
+  .about-section-text,
+  .about-section-image {
+    width: 100%;
+  }
+
+  .about-section-text {
+    padding: 10px;
+  }
+
+  .about-section-text h1 {
+    font-size: 22px;
+  }
+
+  .about-section-text p {
+    font-size: 14px;
+  }
+
+  /* Divider */
+  .section-divider {
+    width: 90%;
+    height: 1px;
+    margin: 20px auto;
+  }
+
+  /* Vision/Mission/Values */
+  .vision-mission-container {
+    flex-direction: column;
+    margin: 20px;
+    gap: 1rem;
+  }
+
+  .vision-col {
+    padding: 15px;
+    min-width: unset;
+  }
+
+  .vision-col h2 {
+    font-size: 18px;
+  }
+
+  .vision-col p {
+    font-size: 14px;
+  }
+
+  /* Accordion */
+  .values-accordion .accordion-toggle {
+    font-size: 15px;
+  }
+
+  .values-accordion .accordion-content p {
+    font-size: 13px;
+  }
+
+  /* Call to action */
+  .get-in-touch .hero-btn {
+    width: 90%;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/*Responsive for Services Page*/
+
+@media (max-width: 768px) {
+/* --- CONTACT SECTION (Hidden on Mobile) --- */
+.contact-info {
+  display: none !important;
+  position: static !important;
+}
+
+/* --- NAVIGATION (Responsive + Sticky) --- */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  height: auto;
+  min-height: 60px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+  z-index: 1000;
+  margin: 0;
+}
+
+.nav-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #004AAD;
+  margin-left: auto;
+  z-index: 1002;
+  position: relative;
+}
+
+.nav-links {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px 0;
+  border-top: 1px solid lightgray;
+  position: relative;
+  z-index: 1001;
+}
+
+.nav-links.show {
+  display: flex !important;
+}
+
+.nav-links ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav-links ul li {
+  padding: 10px 20px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+}
+
+.nav-links ul li a {
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+/* --- HEADER TEXT BOX (.services-text-box) --- */
+@media (max-width: 768px) {
+  .header-services {
+    height: auto !important;             /* Allows it to grow as needed */
+    min-height: 60vh;                    /* Ensures it's tall enough initially */
+    padding-bottom: 60px;                /* Adds spacing so background covers all content */
+    background-size: auto !important;   /* Ensures full coverage */
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important; /* Fixes issues on mobile (especially iOS) */
+    
+  } 
+
+  .services-text-box {
+    position: static !important;        /* Remove absolute positioning on mobile */
+    transform: none !important;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+
+  }
+}
+
+
+.header-services .services-text-box h1 {
+  font-size: 28px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.header-services .services-text-box p {
+  font-size: 16px;
+  padding: 10px;
+  line-height: 1.5;
+}
+
+
+  /* SERVICES CONTAINER */
+  .services-container {
+    flex-direction: column;
+    margin: 20px 20px;
+  }
+
+  .services-container.reverse {
+    flex-direction: column;
+  }
+
+  .services-text,
+  .services-image {
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  .services-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .services-text p,
+  .services-text ul {
+    font-size: 1rem;
+  }
+
+  .services-image img {
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  /* GET IN TOUCH SECTION */
+  .get-in-touch .hero-btn {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1.2rem;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+}
+
+/*Responsive Menu for About Us*/
+
+

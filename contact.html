@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="icon" href="Images/TTC (1) (2).jpg">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="contact-info" id="contactInfo">
+<div class="contact-left">
+    <div class="scroll-wrapper">
+        <p>Helping you Grow your business</p>
+    </div>
+</div>
+
+    <div class="contact-right">
+        <span><img src="Images/phone.png" alt="Phone Icon" class="icon"> +27 73 621 5141</span>
+        <span><img src="Images/mail.png" alt="Email Icon" class="icon"> info@toptier.co.za</span>
+ 
+    </div>
+</div>
+<!-- For ABOUT PAGE ONLY - use this structure -->
+<section class="header-contact">
+    <nav>
+        <a href="index.html"><img src="Images/TTC (1) (2).jpg" alt="Company Logo"></a>
+         <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="About.html">ABOUT US</a></li>
+                <li><a href="Service.html">SERVICES</a></li>
+                <li><a href="contact.html" class="contact-btn">CONTACT US</a></li>    
+            </ul>
+        </div> 
+    </nav> 
+    <div class="contact-text-box">
+        <h1>Contact Us</h1>
+        <p>Although we are experts in designing and implementing digital marketing techniques, traditional marketing remains a crucial part of our comprehensive strategy. At Top Tier Creatives, our brand experts craft unique concepts that resonate with your audience, brought to life through stunning graphics.</p>
+    </div>
+</section>
+
+<section class="contact-us reveal">
+    
+    <div class="row">
+    <div class="contact-col">
+        <div>
+            <i class="fa fa-home"></i>
+            <span>
+                <h3>5377 Beefwood Street, Brooklands</h3>
+                <p>Gauteng, South Africa</p>
+            </span>
+        </div>
+        <div>
+            <i class="fa fa-phone"></i>
+            <span>
+                <h3>+27 73 621 5141</h3>
+                <p>Monday to Friday</p>
+            </span>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <span>
+                <h3>Email us your query</h3>
+                <p>info@toptier.co.za</p>
+            </span>
+        </div>
+    </div>
+    <div class="contact-col">
+        <form action=""> 
+            <input type="text" placeholder="Enter your name" required>
+            <input type="email" placeholder="Enter your email address" required>
+            <input type="text" placeholder="Enter your subject" required>
+            <textarea rows="8" placeholder="Message"required></textarea>
+            <button type="submit" class="submit-btn"><strong>Send Message</strong></button>
+        </form>
+    </div>
+
+
+</section>
+
+<!-------------Javascript for Toggle Menu------------->
+<script>
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active');
+            } else {
+                reveals[i].classList.remove('active');
+            }
+        }
+    }
+        window.addEventListener('scroll', reveal);
+    </script>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 50) {
+      nav.classList.add("shrink");
+    } else {
+      nav.classList.remove("shrink");
+    }
+  });
+</script>
+
+<script>
+window.addEventListener("scroll", function () {
+    const contactLeft = document.querySelector('.contact-left');
+    if (window.scrollY > 0) {
+        contactLeft.classList.add('hidden');
+    } else {
+        contactLeft.classList.remove('hidden');
+    }
+});
+
+</script>
+
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  console.log(nav); // Check if element exists
+  console.log(nav.classList); // Check current classes
+  nav.classList.toggle("show");
+  console.log(nav.classList); // Verify class was toggled
+}
+</script>
+
+</body>
+</html>
