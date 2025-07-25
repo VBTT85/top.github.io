@@ -94,7 +94,7 @@ body {
 .header { 
     min-height: 100vh;
     width: 100vw; /* Ensure full viewport width */
-    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,0.4)), url(Images/fabio-oyXis2kALVg-unsplash.jpg);
+    background-image: linear-gradient(rgba(4,9,30,0.4), rgba(4,9,30,0.4)), url(Images/fabio-oyXis2kALVg-unsplash_Web.webp);
     background-position: center;
     background-size: cover;
     position: relative;
